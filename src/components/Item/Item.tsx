@@ -61,7 +61,7 @@ export function Item({
       : undefined
   let titletext =
     localisation[offer.description.id]
-      ? offer.description.id : localisation[offer.description.id].display_name
+      ? localisation[offer.description.id].display_name : offer.description.id
 
   return (
     <div
