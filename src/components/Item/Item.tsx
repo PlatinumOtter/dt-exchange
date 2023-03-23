@@ -59,6 +59,9 @@ export function Item({
           color: targets[offer.description.overrides.filter_match].color,
         }
       : undefined
+  let titletext =
+    localisation[offer.description.id]
+      ? offer.description.id : localisation[offer.description.id].display_name
 
   return (
     <div
@@ -66,7 +69,7 @@ export function Item({
       key={offer.offerId}
     >
       <Title style={filterMatchStyle}>
-        {localisation[offer.description.id].display_name}
+        {titletext}
       </Title>
 
       {offer.state === "completed" ? (
